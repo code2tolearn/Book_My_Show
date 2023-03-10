@@ -17,12 +17,14 @@ public class TheaterController {
     TheaterService theaterService;
 
     @PostMapping("/add")
-    public ResponseEntity addTheater(@RequestBody TheaterEntryDto theaterEntryDto){
+    public ResponseEntity<String> addTheater(@RequestBody TheaterEntryDto theaterEntryDto) {
 
-        try{
+        try {
             String result = theaterService.addTheater(theaterEntryDto);
-            return new ResponseEntity(result, HttpStatus.CREATED);
-        }catch (Exception e){
-            return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(result , HttpStatus.CREATED);
         }
+        catch (Exception e) {
+            return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
 }

@@ -16,6 +16,7 @@ public class MovieController {
      @Autowired
      MovieService movieService ;
 
+
      @PostMapping("/add")
      public ResponseEntity<String> addMovie(@RequestBody MovieEntryDto movieEntryDto) {
 
@@ -23,8 +24,15 @@ public class MovieController {
              String result = movieService.addMovie(movieEntryDto);
              return new ResponseEntity<>(result, HttpStatus.CREATED);
          } catch (Exception e) {
-             String response = "Movie not added";
-             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+            // String response = "Movie not added";
+             return new ResponseEntity<>( e.getMessage() , HttpStatus.BAD_REQUEST);
          }
      }
+//    @PostMapping("/add")
+//    public String addMovie(@RequestBody MovieEntryDto movieEntryDto )
+//    {
+//
+//       return movieService.addMovie(movieEntryDto);
+//    }
+
 }

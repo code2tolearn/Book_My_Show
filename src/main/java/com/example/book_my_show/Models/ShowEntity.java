@@ -17,7 +17,7 @@ import java.util.List;
 
 @Entity
 @Table(name ="shows")
-@Data
+@Data   //getter setter and required constructor
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,11 +27,11 @@ public class ShowEntity {
     private  int  id ;
 
    private LocalDate showDate ;
-
+   // this will save Local date intro showDate variable
    private LocalTime showTime ;
-
+   // this will save Local date intro showDate variable
     @Enumerated(EnumType.STRING)
-    private ShowType showType ;
+    private  ShowType  showType ;
 
    @CreationTimestamp
    private Date createdOn ;

@@ -20,7 +20,7 @@ public class ShowSeatEntity {
 
      private boolean isBooked ;
 
-     private int price ;//price of CLASSIC Seat for that particualr
+     private int price ;//price of CLASSIC Seat for that particular
 
      private  String seatNo ;
 
@@ -35,7 +35,5 @@ public class ShowSeatEntity {
     @ManyToOne
     @JoinColumn
     private  ShowEntity showEntity ;
-
-
 
 }

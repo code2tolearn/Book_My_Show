@@ -13,14 +13,10 @@ public class MovieService {
     MovieRepository movieRepository;
 
     public String addMovie(MovieEntryDto movieEntryDto)throws Exception{
-
-
         MovieEntity movieEntity = MovieConvertors.convertEntryDtoToEntity(movieEntryDto);
-
         movieRepository.save(movieEntity);
 
         return "Movie Added successfully";
-
 
     }
 

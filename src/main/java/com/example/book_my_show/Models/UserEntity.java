@@ -2,7 +2,6 @@ package com.example.book_my_show.Models;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,15 +18,16 @@ public class UserEntity {
 
     private String name ;
 
-    private  int age ;
+    private   int  age ;
 
-   @Column(unique = true , nullable = false)
-   private  String email ;
-   @Column(unique = true , nullable = false)
-   private  String mobNo ;
+    @Column(unique = true , nullable = false) // can't be null
+    private  String email ;
 
-   private String address;
+    @Column(unique = true , nullable = false) // nullable = false can't be null
+    private  String mobNo ;
 
-    @OneToMany(mappedBy = "userEntity",cascade = CascadeType.ALL)
+    private String address;
+
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
     private List<TicketEntity> bookedTickets = new ArrayList<>();
  }
