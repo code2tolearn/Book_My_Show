@@ -47,70 +47,69 @@ Tickets
      
 # Postman Commond     
 
-    To Add User:
+To Add User:
     
-localhost:8080/user/add
+     localhost:8080/user/add
+     {
+     "name": "String",
+      "email": "String",
+      "address": "String",
+      "mobileNumber": "String",
+      "age" : int
+    } 
+ 
+ To Add Theater: 
+ 
+    localhost:8080/theater/add    
+    {
+     "name": "String",
+    "location": "String",
+    "classicSeatsCount": int,
+    "premiumSeatsCount": int
+     } 
 
-{
-  "name": "String",
-  "email": "String",
-  "address": "String",
-  "mobileNumber": "String",
-  "age" : int
-} 
 
-      To Add Theater: 
-      
-localhost:8080/theater/add
-
-{
-  "name": "String",
-  "location": "String",
-  "classicSeatsCount": int,
-  "premiumSeatsCount": int
-} 
-
-         To Add Movies:
+To Add Movies:
          
-localhost:8080/movies/add
+    localhost:8080/movies/add
 
-{
-  "movieName": "String",
-  "genre": "ENUM Type",
-  "language": "ENUM Type",
-  "rating": double,
-  "duration": int
-} 
+    {
+    "movieName": "String",
+     "genre": "ENUM Type",
+    "language": "ENUM Type",
+    "rating": double,
+    "duration": int 
+    } 
 
-      To Add Shows:
+ To Add Shows:
       
-localhost:8080/shows/add
+     localhost:8080/shows/add
 
-{
-  "movieId":int,
-  "theaterId": int,
-  "classSeatPrice": int,
-  "premiumSeatPrice": int,
-  "showType": "ENUM Type",
-  "showTime": "hh:mm:ss",
-  "showDate":"yyyy-mm-dd"
-} 
+    { 
+     "movieId":int,
+     "theaterId": int,
+     "classSeatPrice": int,
+     "premiumSeatPrice": int,
+     "showType": "ENUM Type",
+     "showTime": "hh:mm:ss",
+     "showDate":"yyyy-mm-dd"
+     } 
 
-    To Book Ticket: 
+  To Book Ticket: 
     
-localhost:8080/tickets/book
+     localhost:8080/tickets/book
 
-{
-  "showId": int,
-  "requestedSeats": ["String", "String", "..."],
-  "userId": int
-}
+    {
+    "showId": int,
+    "requestedSeats": ["String", "String", "..."],
+    "userId": int
+    }
 
-    To Cancel Ticket: 
+ To Cancel Ticket: 
     
- localhost:8080/tickets/cancel-ticket
+    localhost:8080/tickets/cancel-ticket
 
-{
-  "ticketId" : int,
-  "deleteTicketList":["String", "String", "..."]
-}
+    {
+    "ticketId" : int,
+     "deleteTicketList":["String", "String", "..."]  
+   }
